@@ -1,0 +1,64 @@
+<h1>Editar anteproyecto</h1>
+<button type="button" class="btn btn-outline-primary regresar" [routerLink]="['/home/items']">Regresar</button>
+<form class="row g-3">
+  <div class="col-md-4" *ngIf="this.proyecto.estadotitulo!==''">
+    <label for="validationDefault01" class="form-label">Titulo</label>
+    <input type="text" class="form-control" disabled="" name="titulo" required [(ngModel)]="proyecto.titulo">
+  </div>
+  <div class="col-md-6" *ngIf="this.proyecto.estadodescripcion!==''">
+    <label for="validationDefault03" class="form-label">Descripción</label>
+    <input type="text" class="form-control" disabled="" name="descripcion" placeholder="Ingresa una breve descripción" required [(ngModel)]="proyecto.descripcion">
+  </div>
+  <div class="col-md-4" *ngIf="this.proyecto.estadobjetivo!==''">
+    <label for="validationDefault03" class="form-label">Objetivo general</label>
+    <input type="text" class="form-control" disabled="" name="objetivo" placeholder="Ingresa el objetivo general" required [(ngModel)]="proyecto.objetivo">
+  </div>
+  <div class="col-md-6" *ngIf="this.proyecto.estadohipotesis!==''">
+    <label for="validationDefaultUsername" class="form-label">Hipotesis</label>
+      <input type="text" class="form-control" disabled="" name="hipotesis" required [(ngModel)]="proyecto.hipotesis">
+  </div>
+  <div class="col-md-4" *ngIf="this.proyecto.estadoplateamiento!==''">
+    <label for="validationDefault02" class="form-label">Planteamiento</label>
+    <textarea class="form-control" rows="3" disabled="" name="planteamiento" required [(ngModel)]="proyecto.planteamiento"></textarea>
+  </div>
+  <div class="col-md-4" *ngIf="this.proyecto.estadojustificacion!==''">
+    <label for="validationDefault02" class="form-label">Justificación</label>
+    <textarea class="form-control"  rows="3" disabled="" name="planteamiento" required [(ngModel)]="proyecto.justificacion"></textarea>
+  </div>
+</form>
+  <div class="col-12">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Correción o aprovación
+    </button>
+  </div>
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Corregir proyecto</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-12">
+          <select class="form-select" [(ngModel)]="this.opcion" aria-label="¿Qué vas a corregir?">
+            <option diselected>¿Qué vas a corregir?</option>
+            <option *ngFor="let item of this.opciones" [value]="item">{{item}}</option>
+
+          </select>
+        </div>
+        <div class="col-md-12">
+          <label for="validationDefault05" class="form-label">Escribir sugerencias</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" [(ngModel)]="this.comentario" rows="3" required></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="enviar()">Enviar</button>
+        <button type="button" class="btn btn-success" (click)="aprobar()">Aprobar</button>
+      </div>
+    </div>
+  </div>
+</div>

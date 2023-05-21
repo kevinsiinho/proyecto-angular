@@ -1,0 +1,64 @@
+{
+  "proyecto": [
+    {
+      "id": 1,
+      "iduser": 1,
+      "titulo": "Mi gran historia",
+      "co_titulo": [
+        "Muy corto",
+        "Bien",
+        "Excelente"
+      ],
+      "descripcion": "Narrar mis inicios",
+      "co_descri": [
+        "No me gusta"
+      ],
+      "co_objetivo": [],
+      "co_hipotesis": [],
+      "co_planteamiento": [],
+      "co_justi": [],
+      "estadotitulo": "Aprobado",
+      "estadodescripcion": "Pendiente",
+      "estadohipotesis": "",
+      "estadoplateamiento": "",
+      "estadojustificacion": "",
+      "estadobjetivo": "",
+      "estado": "Corregido"
+    },
+    {
+      "id": 2,
+      "iduser": 2,
+      "titulo": "Messi, el mejor jugador de la historia ",
+      "co_titulo": [
+        "Por qué Messi"
+      ],
+      "descripcion": "",
+      "co_descri": [],
+      "co_objetivo": [],
+      "co_hipotesis": [],
+      "co_planteamiento": [],
+      "co_justi": [],
+      "estadotitulo": "Pendiente",
+      "estadodescripcion": "",
+      "estadohipotesis": "",
+      "estadoplateamiento": "",
+      "estadojustificacion": "",
+      "estadobjetivo": "",
+      "estado": "Corregido"
+    }
+  ],
+  "user": [
+    {
+      "nombre": "kevin",
+      "email": "kevin@gmail.com",
+      "password": "kevin",
+      "id": 1
+    },
+    {
+      "nombre": "kevinsiinho",
+      "email": "kevinsiinho@gmail.com",
+      "password": "kevin",
+      "id": 2
+    }
+  ]
+}

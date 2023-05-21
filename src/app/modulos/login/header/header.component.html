@@ -1,0 +1,10 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand">Up-proyect</a>
+    <div class="d-flex" >
+      <input class="form-control me-4" type="email" placeholder="Ingresa el correo" [(ngModel)]="this.correo" >
+      <input class="form-control me-4" type="password" [(ngModel)]="this.clave" placeholder="Ingresa la contraseña">
+      <a class="btn btn-light btn btn-primary" aria-current="page" role="button" (click)="login()">Ingresar</a>
+    </div>
+  </div>
+</nav>

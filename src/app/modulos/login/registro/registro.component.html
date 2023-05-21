@@ -1,0 +1,29 @@
+<div class="form">
+  <h2>Crear usuario</h2>
+
+    <div class="mb-3">
+      <label for="validationDefault01" class="form-label">Nombre completo</label>
+      <input type="text" class="form-control" [(ngModel)]="this.user.nombre" placeholder="ingrese tus nombres" required>
+    </div>
+    <div class="mb-3">
+      <label for="validationDefaultUsername" class="form-label">Email</label>
+      <div class="input-group">
+        <input type="email" class="form-control" [(ngModel)]="this.user.email"  aria-describedby="inputGroupPrepend2" required>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="validationDefault03" class="form-label">Password</label>
+      <input type="password" class="form-control" [(ngModel)]="this.user.password" required>
+    </div>
+    <div class="mb-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+        <label class="form-check-label" for="invalidCheck2">
+          Agree to terms and conditions
+        </label>
+      </div>
+    </div>
+    <div class="mb-3">
+      <button class="btn btn-primary" (click)="Onsave()">Submit form</button>
+    </div>
+  </div>

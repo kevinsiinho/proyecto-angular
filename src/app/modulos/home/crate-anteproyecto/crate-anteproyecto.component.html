@@ -1,0 +1,139 @@
+<h1>Crear anteproyecto</h1>
+<form class="row g-3">
+  <div class="col-md-4" *ngIf="this.proyecto.estadotitulo!==''">
+    <label for="validationDefault01" class="form-label">Titulo</label>
+    <input type="text" class="form-control" name="titulo" required [(ngModel)]="proyecto.titulo">
+  </div>
+  <div class="col-md-6" *ngIf="this.proyecto.estadodescripcion!==''">
+    <label for="validationDefault03" class="form-label">Descripción</label>
+    <input type="text" class="form-control" name="descripcion" placeholder="Ingresa una breve descripción" required [(ngModel)]="proyecto.descripcion">
+  </div>
+  <div class="col-md-4" *ngIf="this.proyecto.estadobjetivo!==''">
+    <label for="validationDefault03" class="form-label">Objetivo general</label>
+    <input type="text" class="form-control"  name="objetivo" placeholder="Ingresa el objetivo general" required [(ngModel)]="proyecto.objetivo">
+  </div>
+  <div class="col-md-6" *ngIf="this.proyecto.estadohipotesis!==''">
+    <label for="validationDefaultUsername" class="form-label">Hipotesis</label>
+      <input type="text" class="form-control" name="hipotesis" required [(ngModel)]="proyecto.hipotesis">
+  </div>
+  <div class="col-md-4" *ngIf="this.proyecto.estadoplateamiento!==''">
+    <label for="validationDefault02" class="form-label">Planteamiento</label>
+    <textarea class="form-control" rows="3" name="planteamiento" required [(ngModel)]="proyecto.planteamiento"></textarea>
+  </div>
+  <div class="col-md-4" *ngIf="this.proyecto.estadojustificacion!==''">
+    <label for="validationDefault02" class="form-label">Justificación</label>
+    <textarea class="form-control"  rows="3" name="planteamiento" required [(ngModel)]="proyecto.justificacion"></textarea>
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary" *ngIf="this.crear===false" (click)="onSave()">Enviar</button>
+    <button class="btn btn-primary" *ngIf="this.crear===true" (click)="Onput()">Actualizar</button>
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Ver correciones
+</button>
+
+  </div>
+</form>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Observaciones</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+          <div class="accordion-item" *ngIf="this.proyecto.estadotitulo!==''">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                titulos
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+              <div class="accordion-body">
+                <ul class="list-group">
+                  <li *ngFor="let item of this.proyecto.co_titulo" class="list-group-item">{{item}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item" *ngIf="this.proyecto.estadodescripcion!==''">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                Descripción
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+              <div class="accordion-body">
+                <ul class="list-group">
+                  <li *ngFor="let item of this.proyecto.co_descri" class="list-group-item">{{item}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item" *ngIf="this.proyecto.estadohipotesis!==''">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                Hipotesis
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+              <div class="accordion-body">
+                <ul class="list-group">
+                  <li *ngFor="let item of this.proyecto.co_hipotesis" class="list-group-item">{{item}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" *ngIf="this.proyecto.estadojustificacion!==''">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                Justificación
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+              <div class="accordion-body">
+                <ul class="list-group">
+                  <li *ngFor="let item of this.proyecto.co_justi" class="list-group-item">{{item}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item" *ngIf="this.proyecto.estadobjetivo!==''">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                Objetivo
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+              <div class="accordion-body">
+                <ul class="list-group">
+                  <li *ngFor="let item of this.proyecto.co_objetivo" class="list-group-item">{{item}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item" *ngIf="this.proyecto.estadoplateamiento!==''">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                Planeamiento
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+              <div class="accordion-body">
+                <ul class="list-group">
+                  <li *ngFor="let item of this.proyecto.co_planteamiento" class="list-group-item">{{item}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
